@@ -1,12 +1,15 @@
-import "whatwg-fetch";
+import 'whatwg-fetch';
+import getBaseUrl from './baseUrl';
+
+const baseUrl = getBaseUrl();
 
 /* eslint-disable no-console */
 export function getUsers() {
     return get('users');
 }
 
-function get(url) {
-    return fetch(url).then(onSuccess, onError);
+function get(url) {    
+    return fetch(baseUrl + "/" + url).then(onSuccess, onError);
 }
 
 function onSuccess(response) {
