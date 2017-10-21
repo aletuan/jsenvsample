@@ -7,7 +7,8 @@
       "start": "npm-run-all --parallel security-check open:src",
       "open:src": "babel-node buildScripts/srcServer.js",
       "security-check": "nsp check",
-      "lint": "esw webpack.config.* src buildScripts --color"
+      "lint": "esw webpack.config.* src buildScripts --color",
+      "lint-watch": "npm run lint -- --watch"
   },
   "author": "Cory House",
   "license": "MIT",
